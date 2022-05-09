@@ -5,6 +5,39 @@ body
     background-color: rgba(35, 18, 184, 0.883);
     font-family: Verdana, Geneva, sans-serif;
     overflow: auto;
+    
+}
+.barraSup
+{
+
+    background-color: white;
+    overflow: hidden;
+    border-radius: 10px;
+}
+  
+
+.barraSup a 
+{
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+}
+  
+
+.barraSup a:hover
+{
+    background-color: #ddd;
+    color: black;
+}
+  
+.barraSup a.active 
+  {
+    background-color: #04AA6D;
+    color: white;
 }
 
 #pagina
@@ -20,7 +53,7 @@ body
 }
 #logo 
 {
-    margin-left: 21%;
+    margin-left: 12%;
     margin-right: 21%;
     padding-bottom: 10 px;
 }
@@ -64,7 +97,7 @@ input[type=submit]{
     text-transform: uppercase;
     width: 50%;
     border: 0;
-    background-color: rgba(244, 91, 105, 1);
+    background-color: rgb(246, 6, 6);
     border-radius: 5px;
     margin-top: 10px;
     padding: 10px 10px;   
