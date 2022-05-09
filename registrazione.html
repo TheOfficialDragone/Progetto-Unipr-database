@@ -6,9 +6,9 @@
     <head>
 
         <meta charset="UTF-8">
-        <title>A&P WEB SHOP</title>
+        <title>Registrazione a Unlimited Music</title>
 
-        <link rel="stylesheet" href="../style/theme.css">
+        <link rel="stylesheet" href="../CSS/General_theme.css">
         <script src="../script/registrazione.js"></script>
 
     </head>
@@ -16,16 +16,17 @@
     <body>
 
         
-        <div class="navbar">
-            <a href="home.html">
-                <img src="../img/home.png"/>
-            </a>
+        <div class="barraSup">
+            
+            <a class="active" href="#home" onclick="location.href='../index.html'">Home</a>
+            <a href="#about"onclick="location.href='/about.html'">About</a>
         </div>
+
         <div id="pagina">
             <div id="logo">
                 <img src="../img/logo.png">
                 <br> 
-                <b>Registrati al A&P WebShop: </b>
+                <b>Unlimited Music: </b>
             </div>
 
             <h3>Selezionare il tipo di account che si desidera creare</h3>
@@ -33,8 +34,8 @@
             <div class="dropdown">
 
                 <select id="myDropdown" name="myDropdown" onchange="show()">    
-                    <option value="1">FORNITORE</option>
-                    <option value="2">CLIENTE</option>
+                    <option value="1">Cantante</option>
+                    <option value="2">Utente normale</option>
                 </select>
 
             </div>
