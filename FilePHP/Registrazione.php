@@ -14,14 +14,14 @@
 			return -1;					//EMAIL INESISTENTE NEL DATABASE
 		}else
 		{
-			retrun 1;					//EMAIL PRESENTE NEL DATABASE
+			return 1;					//EMAIL PRESENTE NEL DATABASE
 		}
 	}
 	
 	//REGISTRAZIONE DI UN UTENTE NEL DATABASE
 	function registrazioneUtente($emailInserita, $passwordInserita)
 	{
-		$utenteInserito=array('username'->strtolower($_POST['username']), 'nome'->$_POST['nome'], 'cognome'->$_POST['cognome'], 'email'->$emailInserita, 'password'->$passwordInserita, 'sesso'->$_POST['sesso']);
+		$utenteInserito=array('username'=>strtolower($_POST['username']), 'nome'=>$_POST['nome'], 'cognome'=>$_POST['cognome'], 'email'=>$emailInserita, 'password'=>$passwordInserita, 'sesso'=>$_POST['sesso']);
 		
 		$queryInserisciUtente=$GLOBALS['connection']->prepare("insert into utenti values('".$utenteInserito['username']."', '".$utenteInserito['nome']."', '".$utenteInserito['cognome']."', ?, '".$utenteInserito['sesso']."', '".$utenteInserito['email']."')");
 		
@@ -43,7 +43,7 @@
 	//REGISTRAZIONE DI UN AUTORE NEL DATABASE
 	function registrazioneAutore($emailInserita, $passwordInserita)
 	{
-		$autoreInserito=array('nomedarte'->strtolower($_POST['nomedarte']), 'genere'->$_POST['genere'], 'nalbum'->$_POST['nalbum'], 'password'->$passwordInserita, 'email'->$emailInserita);
+		$autoreInserito=array('nomedarte'=>strtolower($_POST['nomedarte']), 'genere'=>$_POST['genere'], 'nalbum'=>$_POST['nalbum'], 'password'=>$passwordInserita, 'email'=>$emailInserita);
 		
 		$queryInserisciAutore=$GLOBALS['connection']->prepare("insert into autori values('".$autoreInserito['nomedarte']."', '".$autoreInserito['genere']."', '".$autoreInserito['nalbum']."', ?, '".$autoreInserito['email']."')");
 		
