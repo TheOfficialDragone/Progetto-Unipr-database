@@ -23,7 +23,7 @@
 	{
 		$utenteInserito=array('username'=>strtolower($_POST['username']), 'nome'=>$_POST['nome'], 'cognome'=>$_POST['cognome'], 'email'=>$emailInserita, 'password'=>$passwordInserita, 'sesso'=>$_POST['sesso']);
 		
-		$queryInserisciUtente=$GLOBALS['connection']->prepare("insert into utenti values('".$utenteInserito['username']."', '".$utenteInserito['nome']."', '".$utenteInserito['cognome']."', ?, '".$utenteInserito['sesso']."', '".$utenteInserito['email']."')");
+		$queryInserisciUtente=$GLOBALS['connection']->prepare("INSERT INTO utenti VALUES('".$utenteInserito['username']."', '".$utenteInserito['nome']."', '".$utenteInserito['cognome']."', ?, '".$utenteInserito['sesso']."', '".$utenteInserito['email']."')");
 		
 		$password=mysqli_real_escape_string($GLOBALS['connection'], $utenteInserito['password']);
 		
@@ -36,7 +36,7 @@
 		}else
 		{
 			echo("<script type='text/javascript'>alert('Account ".$utenteInserito['username']." registrato con successo');</script");
-			header("refresh:0.1; url=../pages/login.html");
+			header("refresh:0.1; url=../HTML/login.html");
 		}
 	}
 	
@@ -45,7 +45,7 @@
 	{
 		$autoreInserito=array('nomedarte'=>strtolower($_POST['nomedarte']), 'genere'=>$_POST['genere'], 'nalbum'=>$_POST['nalbum'], 'password'=>$passwordInserita, 'email'=>$emailInserita);
 		
-		$queryInserisciAutore=$GLOBALS['connection']->prepare("insert into autori values('".$autoreInserito['nomedarte']."', '".$autoreInserito['genere']."', '".$autoreInserito['nalbum']."', ?, '".$autoreInserito['email']."')");
+		$queryInserisciAutore=$GLOBALS['connection']->prepare("INSERT INTO autori VALUES('".$autoreInserito['nomedarte']."', '".$autoreInserito['genere']."', '".$autoreInserito['nalbum']."', ?, '".$autoreInserito['email']."')");
 		
 		$password=mysqli_real_escape_string($GLOBALS['connection'], $autoreInserito['password']);
 		
@@ -58,7 +58,7 @@
 		}else
 		{
 			echo("<script type='text/javascript'>alert('Account ".$autoreInserito['nomedarte']." registrato con successo');</script");
-			header("refresh:0.1; url=../pages/login.html");
+			header("refresh:0.1; url=../HTML/login.html");
 		}
 	}
 	
@@ -82,6 +82,6 @@
 			exit;
 		}
 		
-		header("refresh:0.1; url=../pages/login.html");
+		header("refresh:0.1; url=../HTML/login.html");
 	}
 ?>
