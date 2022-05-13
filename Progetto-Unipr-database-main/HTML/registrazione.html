@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="it">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <title>Registrazione a Unlimited Music</title>
+
+        <link rel="stylesheet" href="../CSS/General_theme.css">
+        <script src="../JS/registrazione.js"></script>
+
+    </head>
+
+    <body>
+
+        
+        <div class="barraSup">
+            
+            <a class="active" href="#home" onclick="location.href='../index.html'">Home</a>
+            <a href="#about"onclick="location.href='about.html'">About</a>
+        </div>
+
+        <div id="pagina">
+            <div id="logo">
+                <img src="../img/logo.png">
+                <br> 
+                <b>Unlimited Music: </b>
+            </div>
+
+            <h3>Selezionare il tipo di account che si desidera creare</h3>
+
+            <div class="dropdown">
+
+                <select id="myDropdown" name="myDropdown" onchange="show()">    
+                    <option value="1">Cantante</option>
+                    <option value="2">Utente normale</option>
+                </select>
+
+            </div>
+
+            <div id="textbox">
+
+                <form action="../FilePHP/Controller.php" method="post" id="registrazioneAutore" style="display: none;">
+                    <input type="text" id="nome d'arte" required="required" name="nomedarte" placeholder="nomedarte"><br>
+                    <input type="text" id="email" required="required" name="email" placeholder="email"><br>
+                    <input type="password" id="password" required="required" name="password" placeholder="password"><br>
+                    <input type="text" id="genere" required="required" name="genere" placeholder="genere"><br>
+                    <input type="text" id="numero album" required="required" name="nalbum" placeholder="nalbum"><br>
+                    <input type="text" name="tipoRegistrazione" value="autore" style="display: none;"><!--Tag di comodo, per gestire poi l'inserimento del nuovo acccount lato server -->
+                    <input type="submit" name="azione" value="registrazione">
+                </form>
+
+                <form action="../FilePHP/Controller.php" method="post" id="registrazioneUtente" style="display: none;">
+                    <input type="text" id="username" required="required" name="username" placeholder="username"><br>
+                    <input type="text" id="email" required="required" name="email" placeholder="email"><br>
+                    <input type="password" id="password" required="required" name="password" placeholder="password"><br>
+                    <input type="text" id="nome" required="required" name="nome" placeholder="nome"><br>
+                    <input type="text" id="cognome" required="required" name="cognome" placeholder="cognome"><br>
+                    <input type="text" name="tipoRegistrazione" value="utente" style="display: none;"><!--Tag di comodo, per gestire poi l'inserimento del nuovo acccount lato server -->
+                    <input type="submit" name="azione" value="registrazione">
+                </form>
+
+            </div>
+
+        </div>    
+    </body>
+
+</html>
