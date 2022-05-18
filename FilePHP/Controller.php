@@ -7,7 +7,8 @@
     include "FilePHP/Login.php";
     include "FilePHP/Logout.php";
     include "FilePHP/Registrazione.php";
-    include "VisualizzaAccount.php";
+    include "FilePHP/VisualizzaAccount.php";
+    include "FilePHP/Ricerca.php";
 
     if(!isset($_SESSION['email']))
     {
@@ -44,6 +45,9 @@
             break;
         case "canellazione_canzone":
             cancellazioneCanzone($_REQUEST['genere'], $_REQUEST['titolo'], $_REQUEST['Autore']);
+            break;
+        case "ricerca":
+            ricerca($_REQUEST['titolo'], $_REQUEST['titoloAlbum'], $_REQUEST['genere']);
             break;
         default: 
             echo("ERRORE");
