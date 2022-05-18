@@ -14,7 +14,7 @@
         session_start();
     }
 
-    $scelta=$_REQUEST['scelta'];
+    $scelta=$_REQUEST['azione'];
 
     switch($scelta)
     {

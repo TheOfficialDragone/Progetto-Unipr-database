@@ -1,5 +1,5 @@
 <?php
-	$connection=new mysqli($GLOBALs['host'], $GLOBALs['user'], $GLOBALs['passwd'], $GLOBALs['DB_name']);
+	$connection=new mysqli("localhost", "root", "", "voice_hunter");
 	
 	function ControlloEmail($emailInserita)
 	{
@@ -21,13 +21,13 @@
 	//REGISTRAZIONE DI UN UTENTE NEL DATABASE
 	function registrazioneUtente($emailInserita, $passwordInserita)
 	{
-		$utenteInserito=array('username'=>strtolower($_POST['username']), 'nome'=>$_POST['nome'], 'cognome'=>$_POST['cognome'], 'email'=>$emailInserita, 'password'=>$passwordInserita, 'sesso'=>$_POST['sesso']);
+		$utenteInserito=array('username'=>strtolower($_POST['username']), 'nome'=>$_POST['nome'], 'cognome'=>$_POST['cognome'], 'email'=>$emailInserita, 'password'=>$passwordInserita);
 		
-		$queryInserisciUtente=$GLOBALS['connection']->prepare("INSERT INTO utenti VALUES('".$utenteInserito['username']."', '".$utenteInserito['nome']."', '".$utenteInserito['cognome']."', ?, '".$utenteInserito['sesso']."', '".$utenteInserito['email']."')");
+		$queryInserisciUtente=$GLOBALS['connection']->prepare("INSERT INTO utenti VALUES('".$utenteInserito['username']."', '".$utenteInserito['nome']."', '".$utenteInserito['cognome']."', ?, '".$utenteInserito['email']."')");
 		
 		$password=mysqli_real_escape_string($GLOBALS['connection'], $utenteInserito['password']);
 		
-		$queryInserisciUtente->bin_param('s', $password);
+		$queryInserisciUtente->bind_param('s', $password);
 		
 		if($queryInserisciUtente->execute()==false)
 		{
@@ -49,7 +49,7 @@
 		
 		$password=mysqli_real_escape_string($GLOBALS['connection'], $autoreInserito['password']);
 		
-		$queryInserisciAutore->bin_param('s', $password);
+		$queryInserisciAutore->bind_param('s', $password);
 		
 		if($queryInserisciAutore->execute()==false)
 		{

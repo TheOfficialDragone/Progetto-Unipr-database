@@ -1,5 +1,5 @@
 <?php
-	$connection=new mysqli($GLOBALs['host'], $GLOBALs['user'], $GLOBALs['passwd'], $GLOBALs['DB_name']);
+	$connection=new mysqli("localhost", "root", "", "voice_hunter");
 	
 	function inserimentoCanzone($audio, $genere, $titolo, $video, $CODAlbum, $Autore)
 	{

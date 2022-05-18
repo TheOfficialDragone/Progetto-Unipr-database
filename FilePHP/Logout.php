@@ -2,6 +2,6 @@
 	function logout()
 	{
 		session_destroy();
-		header('Location: ../index.html'); 
+		header('Location: ../HTML/index.html'); 
 	}
 ?>
