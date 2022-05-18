@@ -53,10 +53,10 @@
         }else if (controlloLogin($emailControllo, $passwdControllo, "autori")>0)
         {
             $_SESSION['tipoProfilo'] = "autori";
-            header("refresh:0.1; url=../HTML/home.html");
+            header("refresh:0.1; url=../HTML/profilo.html");
         }else
 		{
-			header("refresh:0.1; url=../HTML/home.html");
+			header("refresh:0.1; url=../HTML/profilo.html");
 		}
 		
 		$GLOBALS['connection']->close();
