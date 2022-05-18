@@ -23,7 +23,7 @@ function visualizzaFatture()
             if(xmlhttp.responseText == "error_l")
             {
                 alert('Devi prima effettuare il login!');
-                window.location.href = "../pages/login.html";
+                window.location.href = "../HTML/login.html";
             }
 
             if(xmlhttp.responseText == "error_11")
