@@ -49,7 +49,7 @@
 		if(controlloLogin($emailControllo, $passwdControllo, "utenti")>0)
         {
             $_SESSION['tipoProfilo'] = "utenti";
-            header("refresh:0.1; url=../HTML/home.html");
+            header("refresh:0.1; url=../HTML/profilo.html");
         }else if (controlloLogin($emailControllo, $passwdControllo, "autori")>0)
         {
             $_SESSION['tipoProfilo'] = "autori";
