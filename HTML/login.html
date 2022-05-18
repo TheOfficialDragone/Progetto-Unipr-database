@@ -9,12 +9,14 @@
         
     </head>
 
-    <div class="barraSup">
+    <body>
 
-        <a class="active" href="#home" onclick="location.href='../index.html'">Home</a>
-        <a href="#about"onclick="location.href='../HTML/about.html'">About</a>
-       
-    </div>
+        <div class="barraSup">
+
+            <a class="active" href="#home" onclick="location.href='../index.html'">Home</a>
+            <a href="#about"onclick="location.href='../HTML/about.html'">About</a>
+        
+        </div>
 
 
         <div id="pagina"> 
@@ -23,10 +25,10 @@
             <div id="logo">
                 <img src="../Img/logo.png">
                 <br> 
-                <b>Accedi a Unlimited Music: </b>
+                <b>Accedi a Voice Hunter: </b>
             </div>
             <!--  Con required si è obbligati a scrivere qualcosa quindi non rimane vuoto-->
-            <form action="../FilePHP/Login.php" method="post">
+            <form action="../FilePHP/Controller.php" method="post">
                 <input type="text" id="email" required="required" name="email" placeholder="email"><br>
                 <input type="password" id="password" required="required" name="password" placeholder="password"><br>
                 <input type="submit" name="azione" value="login">

@@ -1,12 +1,12 @@
 <?php
-    include "Account.php";
-    include "Cancellazione.php";
-    include "DataBase_Connection.php";
-    include "HomePage.php";
-    include "Inserimento.php";
-    include "Login.php";
-    include "Logout.php";
-    include "Registrazione.php";
+    include "FilePHP/Account.php";
+    include "FilePHP/Cancellazione.php";
+    include "FilePHP/DataBase_Connection.php";
+    include "FilePHP/HomePage.php";
+    include "FilePHP/Inserimento.php";
+    include "FilePHP/Login.php";
+    include "FilePHP/Logout.php";
+    include "FilePHP/Registrazione.php";
     include "VisualizzaAccount.php";
 
     if(!isset($_SESSION['email']))

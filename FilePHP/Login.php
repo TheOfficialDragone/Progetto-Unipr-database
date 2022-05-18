@@ -42,21 +42,21 @@
 		if((isset($_SESSION['email'])) && ($_SESSION['email']==$emailControllo))
 		{
 			echo("Attendere...Sei già loggato");
-			header("refresh:2.5; url=../pages/profilo.html");
+			header("refresh:2.5; url=../HTML/profilo.html");
             exit;
 		}
 		
 		if(controlloLogin($emailControllo, $passwdControllo, "utenti")>0)
         {
             $_SESSION['tipoProfilo'] = "utenti";
-            header("refresh:0.1; url=../pages/home.html");
+            header("refresh:0.1; url=../HTML/home.html");
         }else if (controlloLogin($emailControllo, $passwdControllo, "autori")>0)
         {
             $_SESSION['tipoProfilo'] = "autori";
-            header("refresh:0.1; url=../pages/home.html");
+            header("refresh:0.1; url=../HTML/home.html");
         }else
 		{
-			header("refresh:0.1; url=../pages/home.html");
+			header("refresh:0.1; url=../HTML/home.html");
 		}
 		
 		$GLOBALS['connection']->close();
