@@ -20,7 +20,8 @@
 				array_push($ricerche, $row);
 			}
 			
-			echo json_encode($ricerche);
+			$json_pretty=json_encode($ricerche);
+            echo "<pre>".$json_pretty."<pre/>";
 		}else
 		{
 			echo("ERRORE");
