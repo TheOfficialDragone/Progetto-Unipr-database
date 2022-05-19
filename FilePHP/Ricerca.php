@@ -1,13 +1,11 @@
 <?php
     $connection=new mysqli("localhost", "root", "", "voice_hunter");
 
-    function ricerca($titoloInserito, $albumInserito, $genereInserito)
+    function ricerca($titoloInserito)
     {
         $queryRicerca="SELECT b.*
                        FROM brani b, album a
-                       WHERE b.titolo='".$titoloInserito."'
-                       OR a.titolo='".$albumInserito."'
-                       OR b.genere='".$genereInserito."'";
+                       WHERE b.titolo='".$titoloInserito."'";
 
         $risultato=$GLOBALS['connection']->query($queryRicerca);
 
@@ -19,6 +17,8 @@
 			{
 				array_push($ricerche, $row);
 			}
+
+			echo("CIAO");
 			
 			$json_pretty=json_encode($ricerche);
             echo "<pre>".$json_pretty."<pre/>";

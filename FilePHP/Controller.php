@@ -38,16 +38,16 @@
             getAccount();
             break;
         case "inserisci_canzone":
-            inserimentoCanzone($_REQUEST['audio'], $_REQUEST['genere'], $_REQUEST['titolo'], $_REQUEST['video'], $_REQUEST['CODAlbum'], $_REQUEST['Autore']);
+            inserimentoCanzone($_REQUEST['audio'], $_REQUEST['genere'], $_REQUEST['titolo'], $_REQUEST['video']);
             break;
         case "inserisci_album":
-            inserimentoAlbum($_REQUEST['titolo'], $_REQUEST['nbrani'], $_REQUEST['Autore']);
+            inserimentoAlbum($_REQUEST['titolo'], $_REQUEST['nbrani']);
             break;
         case "canellazione_canzone":
-            cancellazioneCanzone($_REQUEST['genere'], $_REQUEST['titolo'], $_REQUEST['Autore']);
+            cancellazioneCanzone($_REQUEST['genere'], $_REQUEST['titolo']);
             break;
         case "ricerca":
-            ricerca($_REQUEST['titolo'], $_REQUEST['titoloAlbum'], $_REQUEST['genere']);
+            ricerca($_REQUEST['titolo']);
             break;
         default: 
             echo("ERRORE");
