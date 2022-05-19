@@ -10,7 +10,7 @@
         <!-- <script src="../JS/caricaProfilo.js"></script> -->
     </head>
 
-    <body onload="checkVisualizza()" class="profilo">
+    
         <div class="navbar">
             <a href="../index.html">
                 <img src="../Img/home.jpeg"/>
@@ -19,15 +19,15 @@
                 <img src="../Img/user.png"/>
             </a>
         </div>
+
         <div id="pagina">
             <form action="../FilePHP/Controller.php">
                 <label for="cerca_canzone">Cerca una canzone:</label><br>
-                <input type="text" id="Ricerca" name="brano" value=""><br>
-                <input type="submit" value="Cerca">
+                <input type="submit" name="azione" value="ricerca" id="Cerca_brano">
              </form>
 
         </div>
 
-    </body>
+    
 
 </html>
