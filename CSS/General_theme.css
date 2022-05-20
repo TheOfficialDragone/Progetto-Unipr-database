@@ -143,9 +143,11 @@ input[list]{
 #btnLogout{
     height: 85%;
     width: 10%; 
-   
    position: absolute; 
    left: 88%;
+   background-color: white;
+   border-radius: 10px; /* Bordi smussati */
+   
 }
 .navbar a:hover {
     background: #ddd;
