@@ -47,7 +47,7 @@
             cancellazioneCanzone($_REQUEST['genere'], $_REQUEST['titolo']);
             break;
         case "ricerca":
-            ricerca($_REQUEST['titolo']);
+            ricerca($_REQUEST['ricerca']);
             break;
         default: 
             echo("ERRORE");

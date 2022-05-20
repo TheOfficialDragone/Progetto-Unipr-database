@@ -18,7 +18,6 @@
 				array_push($ricerche, $row);
 			}
 
-			echo("CIAO");
 			
 			$json_pretty=json_encode($ricerche);
             echo "<pre>".$json_pretty."<pre/>";
