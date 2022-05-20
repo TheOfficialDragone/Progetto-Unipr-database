@@ -11,16 +11,31 @@
     </head>
 
     
-        <div class="navbar">
-            <a href="../index.html">
-                <img src="../Img/home.jpeg"/>
-            </a>
-            <a href="profilo.html">
-                <img src="../Img/user.png"/>
-            </a>
-        </div>
+    <div class="navbar">
+        <a href="../index.html">  <!--home-->
+            <img src="../Img/home.png"/>
+        </a>
+
+        <!--
+        <a href="profilo.html">
+            <img src="../Img/user.png"/> 
+        </a>
+    
+        <a href="login.html"> 
+            <img src="../Img/logout.png"/>
+        </a>
+        -->
+        <form method="post" action="../FilePHP/Controller.php">
+            <input type="button" name="azione" value="logout" id="btnLogout">
+        </form>
+
+    </div>
 
         <div id="pagina">
+            <div id="logo">
+                <img src="../img/logo.png">
+                <br> 
+            </div>
             <form method="post" action="../FilePHP/Controller.php">
                 <label for="cerca_canzone">Cerca una canzone:</label><br>
                 <input type="text" id="ricerca" name="brano" value=""><br>
