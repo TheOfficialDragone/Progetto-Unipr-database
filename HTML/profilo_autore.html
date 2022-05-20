@@ -29,19 +29,25 @@
                 <input type="button" name="azione" value="logout" id="btnLogout">
             </form>
         </div>
-
+        
+             
         <!--Cerca la canzone-->
         <div id="pagina">
+            
+            <div id="logo">
+                <img src="../img/logo.png">
+                <br> 
+            </div>
             <form method="post" action="../FilePHP/Controller.php">
                 <label for="Cerca_canzone">Cerca una canzone:</label><br>
                 <input type="text" id="ricerca" name="brano" value=""><br>
                 <input type="submit" name="azione" value="ricerca" id="Cerca_brano">
-             </form>
-
+            </form>
         </div>
 
-        <!--inserisci la canzone-->
         <div id="pagina">
+         <!--inserisci la canzone-->
+        
             <form method="post" action="../FilePHP/Controller.php">
              <label for="Inserisci_canzone">Inserisci una canzone:</label><br>
              <input type="text" id="Nome_brano" name="brano" value="Nome brano:"><br>
