@@ -63,7 +63,7 @@ select {
     background-color: #D2D2D2;
     font-size: 17px;
     text-transform: uppercase;
-     border-radius: 5px;
+    border-radius: 5px;
 }
 
 input[type=text] {
@@ -130,82 +130,30 @@ input[list]{
 }
 
 .navbar a {
-    float: left;
+    float: left; 
     color: black;
     text-align: center;
     text-decoration: none;
     height: 100%;
-    padding-top: 0.35%;
+    padding-top: 0.15%;
     padding-left: 0.5%;
     margin-right: -30%;
 }
 
+#btnLogout{
+    height: 85%;
+    width: 10%; 
+   
+   position: absolute; 
+   left: 88%;
+}
 .navbar a:hover {
     background: #ddd;
     color: black;
     height: 90%;
-  }
+
+}
 
 .profilo #pagina{
     width: 40%; 
 }
-#nuovoProdotto {
-    background-color: white;
-    padding: 20px 30px 30px 30px;
-    border-radius: 10px; /* Bordi smussati */
-    margin: 10% 10% 10% 33%;
-    top: 10%;
-    left: 35%;
-    width: 25%; 
-
-}
-
-#nuovoProdotto input[type=text]{
-    border-radius: 5px;
-    width: 50%;
-    border: 0;
-    padding: 10px 10px;
-    margin-top: 10px;
-    right: 10%;
-    text-transform: uppercase;
-    font-size: 18px;
-}
-
-#nuovoProdotto input[type=number]{
-    background: #D2D2D2;
-    border-radius: 5px;
-    width: 50%;
-    border: 0;
-    padding: 10px 10px;
-    margin-top: 10px;
-    right: 10%;
-    text-transform: uppercase;
-    font-size: 18px;
-}
-
-#nuovoProdotto .button {
-    cursor: pointer;
-    color: #fff;
-    font-size: 16px;
-    text-transform: uppercase;
-    width: 25%;
-    border: 0;
-    background-color: rgba(244, 91, 105, 1);
-    border-radius: 5px;
-    margin-top: 10px;
-    padding: 10px 10px; 
-}
-
-#home {
-    background-color: white;
-    padding: 20px 30px 30px 30px;
-    border-radius: 10px; /* Bordi smussati */
-    margin: 10% 10% 10% 33%;
-    top: 10%;
-    left: 30%;
-    width: 35%; 
-}
-/*#homeImg {
-    width: 50px;
-    height: 50px;
-}*/

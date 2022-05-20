@@ -12,12 +12,22 @@
 
     
         <div class="navbar">
-            <a href="../index.html">
+            <a href="../index.html">  <!--home-->
                 <img src="../Img/home.png"/>
             </a>
+
+            <!--
             <a href="profilo.html">
-                <img src="../Img/user.png"/>
+                <img src="../Img/user.png"/> 
             </a>
+        
+            <a href="login.html"> 
+                <img src="../Img/logout.png"/>
+            </a>
+            -->
+            <form method="post" action="../FilePHP/Controller.php">
+                <input type="button" name="azione" value="logout" id="btnLogout">
+            </form>
         </div>
 
         <!--Cerca la canzone-->
@@ -33,7 +43,7 @@
         <!--inserisci la canzone-->
         <div id="pagina">
             <form method="post" action="../FilePHP/Controller.php">
-             <label for="Inserisci_canzone">inserisci una canzone:</label><br>
+             <label for="Inserisci_canzone">Inserisci una canzone:</label><br>
              <input type="text" id="Nome_brano" name="brano" value="Nome brano:"><br>
              <input type="text" id="link_canzone" name="link_canzone" value="link:"><br>
              <input type="text" id="Genere" name="Genere" value="Genere:"><br>
