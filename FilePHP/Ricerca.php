@@ -10,11 +10,7 @@
 		
         $risultato=$GLOBALS['connection']->query($queryRicerca);
 
-        if($risultato->num_rows>0)
-		{
-			$ricerche=array();
-			
-			echo 	"<!DOCTYPE html>
+		echo 	("<!DOCTYPE html>
 						<html lang='it'>
 				
 							<head>
@@ -35,7 +31,11 @@
 								</a>
 							</div>
 							
-							<div id='pagina'>";
+							<div id='pagina'>");
+
+        if($risultato->num_rows>0)
+		{
+			//$ricerche=array();
 
 			while($row=$risultato->fetch_assoc())
 			{
@@ -45,21 +45,22 @@
 
 				
 							
-				echo "<a href='".$canzone."'>".$titolo."</a><br>";
+				echo ("<p><b>".$titolo."</b> appartenente a ".$genere."</p>
+					   <a href='".$canzone."'>".$titolo."</a><hr>");
 							
 							
 
 				//array_push($ricerche, $row);
 			}
 
-			echo "</div>
-			</html>";
-
 			/*$json_pretty=json_encode($ricerche);
             echo "<pre>".$json_pretty."<pre/>";*/
 		}else
 		{
-			echo("ERRORE");
+			echo ("<p>Nessun risultato trovato</p>");
 		}
+
+		echo ("</div>
+			</html>");
     }
 ?>

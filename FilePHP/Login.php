@@ -5,11 +5,13 @@
 	{
 		$query=$GLOBALS['connection']->prepare("SELECT *
 												FROM ".$Controllo."
-												WHERE email='".$emailInserita."' AND password=?");
+												WHERE email='".$emailInserita."'
+												AND password=?");
 
+		
 		$password=mysqli_real_escape_string($GLOBALS['connection'], $passwordInserita);
 		$query->bind_param('s', $password);
-		$query->execute;
+		$query->execute();
 		$risultato=$query->get_result();
 		
 		if($risultato->num_rows>0)
@@ -39,12 +41,12 @@
 	
 	function login($emailControllo, $passwdControllo)
 	{
-		if((isset($_SESSION['email'])) && ($_SESSION['email']==$emailControllo))
+		/*if((isset($_SESSION['email'])) && ($_SESSION['email']==$emailControllo))
 		{
 			echo("Attendere...Sei già loggato");
 			header("refresh:2.5; url=../HTML/profilo_utente.html");
             exit;
-		}
+		}*/
 		
 		if(controlloLogin($emailControllo, $passwdControllo, "utenti")>0)
         {

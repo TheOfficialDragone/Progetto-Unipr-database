@@ -38,7 +38,7 @@
             getAccount();
             break;
         case "inserisci_canzone":
-            inserimentoCanzone($_REQUEST['audio'], $_REQUEST['genere'], $_REQUEST['titolo'], $_REQUEST['video']);
+            inserimentoCanzone($_REQUEST['canzone'], $_REQUEST['genere'], $_REQUEST['titolo']);
             break;
         case "inserisci_album":
             inserimentoAlbum($_REQUEST['titolo'], $_REQUEST['nbrani']);

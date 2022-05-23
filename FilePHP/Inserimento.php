@@ -1,12 +1,12 @@
 <?php
 	$connection=new mysqli("localhost", "root", "", "voice_hunter");
 	
-	function inserimentoCanzone($audio, $genere, $titolo, $video)
+	function inserimentoCanzone($canzone, $genere, $titolo)
 	{
 		if((isset($_SESSION['email'])) && ($_SESSION['tipoProfilo']=="autore"))
 		{
-			$queryInserimentoCanzone="INSERT INTO brani(audio, genere, titolo, video, CODAlbum, Autore)
-									  VALUES('".$audio."', '".$genere."', '".$titolo."', '".$video."', '".$_SESSION['CODAlbum']."', '".$_SESSION['Autore']."')";
+			$queryInserimentoCanzone="INSERT INTO brani(canzone, genere, titolo)
+									  VALUES('".$canzone."', '".$genere."', '".$titolo."')";
 							   
 			if($GLOBALS['connection']->query($queryInserimentoCanzone))
 			{
@@ -26,7 +26,7 @@
 		if((isset($_SESSION['email'])) && ($_SESSION['tipoProfilo']=="autore"))
 		{
 			$queryInserimentoAlbum="INSERT INTO brani(titolo, nbrani, Autore)
-									VALUES('".$_SESSION['titolo']."', '".$_SESSION['nbrani']."', '".$_SESSION['Autore']."')";
+									VALUES('".$titolo."', '".$nbrani."', '".$_SESSION['Autore']."')";
 							   
 			if($GLOBALS['connection']->query($queryInserimentoAlbum))
 			{
