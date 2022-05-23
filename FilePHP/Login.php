@@ -47,7 +47,6 @@
 			header("refresh:2.5; url=../HTML/profilo_utente.html");
             exit;
 		}*/
-		
 		if(controlloLogin($emailControllo, $passwdControllo, "utenti")>0)
         {
             $_SESSION['tipoProfilo'] = "utenti";
