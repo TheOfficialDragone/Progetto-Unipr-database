@@ -37,8 +37,8 @@
         case "account":
             getAccount();
             break;
-        case "inserisci_canzone":
-            inserimentoCanzone($_REQUEST['canzone'], $_REQUEST['genere'], $_REQUEST['titolo']);
+        case "inserimentoCanzone":
+            inserimentoCanzone($_POST['canzone'], $_POST['genere'], $_POST['titolo']);
             break;
         case "inserisci_album":
             inserimentoAlbum($_REQUEST['titolo'], $_REQUEST['nbrani']);
@@ -50,6 +50,6 @@
             ricerca($_POST['brano']);
             break;
         default: 
-            echo("ERRORE");
+            echo("ERRORE saa");
     }
 ?>

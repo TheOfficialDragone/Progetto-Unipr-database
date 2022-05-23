@@ -5,9 +5,13 @@
 	{
 		if((isset($_SESSION['email'])) && ($_SESSION['tipoProfilo']=="autore"))
 		{
-			$queryInserimentoCanzone="INSERT INTO brani(canzone, genere, titolo)
-									  VALUES('".$canzone."', '".$genere."', '".$titolo."')";
-							   
+			$branoInserito=array('canzone'=>$canzone, 'genere'=>$genere, 'titolo'=>$titolo);
+
+			$queryInserimentoCanzone=$GLOBALS['connection']->prepare("INSERT INTO brani(canzone, genere, titolo)
+									  								  VALUES('".$branoInserito['canzone']."', '".$branoInserito['genere']."', '".$branoInserito['titolo']."')");
+
+			
+
 			if($GLOBALS['connection']->query($queryInserimentoCanzone))
 			{
 				echo("Perfetto");
@@ -25,8 +29,8 @@
 	{
 		if((isset($_SESSION['email'])) && ($_SESSION['tipoProfilo']=="autore"))
 		{
-			$queryInserimentoAlbum="INSERT INTO brani(titolo, nbrani, Autore)
-									VALUES('".$titolo."', '".$nbrani."', '".$_SESSION['Autore']."')";
+			$queryInserimentoAlbum="INSERT INTO album(titolo, nbrani)
+									VALUES('".$titolo."', '".$nbrani."')";
 							   
 			if($GLOBALS['connection']->query($queryInserimentoAlbum))
 			{
