@@ -42,7 +42,7 @@
 		if((isset($_SESSION['email'])) && ($_SESSION['email']==$emailControllo))
 		{
 			echo("Attendere...Sei già loggato");
-			header("refresh:2.5; url=../HTML/profilo.html");
+			header("refresh:2.5; url=../HTML/profilo_utente.html");
             exit;
 		}
 		
@@ -53,10 +53,10 @@
         }else if (controlloLogin($emailControllo, $passwdControllo, "autori")>0)
         {
             $_SESSION['tipoProfilo'] = "autori";
-            header("refresh:0.1; url=../HTML/profilo_autori.html");
+            header("refresh:0.1; url=../HTML/profilo_autore.html");
         }else
 		{
-			header("refresh:0.1; url=../HTML/profilo.html");
+			header("refresh:0.1; url=../HTML/index.html");
 		}
 		
 		$GLOBALS['connection']->close();
