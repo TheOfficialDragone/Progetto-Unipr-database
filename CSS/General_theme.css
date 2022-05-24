@@ -140,16 +140,16 @@ input[list]{
     margin-right: -30%;
 }
 
-#btnLogout{
+#btnlogout{
     height: 85%;
     width: 10%; 
-   position: absolute; 
-   left: 88%;
-   background-color: white;
-   border-radius: 10px; /* Bordi smussati */
-   
+    position: absolute; 
+    left: 89%;
+    background-color: rgb(246, 6, 6);
+    border-radius: 10px; /* Bordi smussati */  
 }
-.navbar a:hover {
+
+.navbar a:hover{
     background: #ddd;
     color: black;
     height: 90%;
@@ -159,3 +159,4 @@ input[list]{
 .profilo #pagina{
     width: 40%; 
 }
+
