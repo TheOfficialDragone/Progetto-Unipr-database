@@ -149,6 +149,15 @@ input[list]{
     border-radius: 10px; /* Bordi smussati */  
 }
 
+#btnAccount{
+    height: 85%;
+    width: 7%; 
+    position: absolute; 
+    left: 5%;
+    background-color: rgb(246, 6, 6);
+    border-radius: 10px; /* Bordi smussati */  
+}
+
 .navbar a:hover{
     background: #ddd;
     color: black;
@@ -159,4 +168,3 @@ input[list]{
 .profilo #pagina{
     width: 40%; 
 }
-

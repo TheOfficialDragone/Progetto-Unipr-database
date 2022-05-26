@@ -10,42 +10,48 @@
         <!-- <script src="../JS/caricaProfilo.js"></script> -->
     </head>
 
+    <body>
+
+        <div class="navbar">
+            <a href="../HTML/profilo_utente.html">  <!--home-->
+                <img src="../Img/home.png"/>
+            </a>
+
+            <form method="post" action="../FilePHP/Controller.php">
+                <input type="submit" name="azione" value="account" id="btnAccount">
+            </form>
+
+            <!--
+            <a href="profilo.html">
+                <img src="../Img/user.png"/> 
+            </a>
+        
+            <a href="login.html"> 
+                <img src="../Img/logout.png"/>
+            </a>
+            -->
+            
+            <form method="post" action="../FilePHP/Controller.php">
+                <input type="submit" name="azione" value="logout" id="btnlogout">
+            </form>
+           
+        </div>
     
-    <div class="navbar">
-        <a href="../index.html">  <!--home-->
-            <img src="../Img/home.png"/>
-        </a>
+        <div id="pagina">
 
-        <!--
-        <a href="profilo.html">
-            <img src="../Img/user.png"/> 
-        </a>
+            <div id="logo">
+                <img src="../img/logo.png"><br> 
+            </div>
+
+            <form method="post" action="../FilePHP/Controller.php">
+                <label for="cerca_canzone">Cerca una canzone:</label><br>
+                <input type="text" id="ricerca" name="brano" value="" placeholder="cerca una canzone"><br>
+                <input type="submit" name="azione" value="ricerca" id="Cerca_brano">
+            </form>
     
-        <a href="login.html"> 
-            <img src="../Img/logout.png"/>
-        </a>
-        -->
-        <form method="post" action="../FilePHP/Controller.php">
-            <input type="submit" name="azione" value="logout" id="btnlogout">
-        </form>
-
-    </div>
-
-    <div id="pagina">
-        <div id="logo">
-            <img src="../img/logo.png">
-            <br> 
         </div>
 
-        <form method="post" action="../FilePHP/Controller.php">
-            <label for="cerca_canzone">Cerca una canzone:</label><br>
-            <input type="text" id="ricerca" name="brano" value=""><br>
-            <input type="submit" name="azione" value="ricerca" id="Cerca_brano">
-        </form>
-
-    </div>
-
-    
+    </body>
     
 </html>
 

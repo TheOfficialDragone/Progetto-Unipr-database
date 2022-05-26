@@ -10,13 +10,22 @@
        
     </head>
 
-    
+    <body>
+        
         <div class="navbar">
-            <a href="../index.html">  <!--home-->
-                <img src="../Img/home.png"/>
+            <a href="../HTML/profilo_autore.html">  <!--home-->
+                <img src="../Img/home.png">
             </a>
 
-            <!--
+            <form method="post" action="../FilePHP/Controller.php">
+                <input type="submit" name="azione" value="account" id="btnAccount">
+            </form>
+
+            <!--<a  href="../FilePHP/VisualizzaAccount.php">
+                <img src="../Img/user.png">
+            </a>
+
+            
             <a href="profilo.html">
                 <img src="../Img/user.png"/> 
             </a>
@@ -31,39 +40,54 @@
             </form>
            
         </div>
-        
-             
+                           
         <!--Cerca la canzone-->
         <div id="pagina">
-            
+                
             <div id="logo">
-                <img src="../img/logo.png">
-                <br> 
+                <img src="../img/logo.png"><br> 
             </div>
+    
             <form method="post" action="../FilePHP/Controller.php">
                 <label for="Cerca_canzone">Cerca una canzone:</label><br>
-                <input type="text" id="ricerca" name="brano" value=""><br>
+                <input type="text" id="ricerca" name="brano" value="" placeholder="cerca una canzone"><br>
                 <input type="submit" name="azione" value="ricerca" id="Cerca_brano">
             </form>
-        </div>
-
-        <div id="pagina">
-         <!--inserisci la canzone-->
-
-            <form action="../FilePHP/Controller.php"  method="post" id="inserimentoCanzone">
-             <label>Inserimento di una canzone</label><br><br>
-             <label>Link canzone:</label><br>
-             <input type="text" id="canzone" name="canzone"><br><br>
-             <label>Genere:</label><br>
-             <input type="text" id="genere" name="genere"><br><br>
-             <label>Titolo:</label><br>
-             <input type="text" id="titolo" name="titolo"><br><br>
-             <input type="submit" name="azione" value="inserisci" id="inserimentoCanzone">
-            </form>
-
-        </div>
-
     
+        </div>
+    
+        <div id="pagina">
+            <!--inserisci la canzone-->
+            <form action="../FilePHP/Controller.php" method="post" id="inserimentoCanzone">
+                <label>Inserimento di una canzone</label><br>
+                <input type="text" id="canzoneInserita" required="required" name="canzone" placeholder="link canzone"><br>
+                <input type="text" id="genereInserito"  required="required" name="genere" placeholder="genere"><br>
+                <input type="text" id="titoloInserito" required="required" name="titolo" placeholder="titolo"><br>
+                <input type="submit" name="azione" value="inserisci canzone">
+            </form>
+        </div>
+    
+        <div id="pagina">
+            <!--inserisci la canzone-->
+            <form action="../FilePHP/Controller.php" method="post" id="inserimentoAlbum">
+                <label>Inserimento di un album</label><br>
+                <input type="text" id="titoloInserito" required="required" name="titolo" placeholder="titolo"><br>
+                <input type="text" id="tipoInserito" required="required" name="tipologia" placeholder="tipologia"><br>
+                <input type="submit" name="azione" value="inserisci album">
+            </form>
+        </div>
+        
+        <div id="pagina">
+            <!--inserisci la canzone-->
+            <form action="../FilePHP/Controller.php" method="post" id="cancellazioneCanzone">
+                <label>Cancellazione di una canzone</label><br>
+                <input type="text" id="genereInserito" required="required" name="genere" placeholder="genere"><br>
+                <input type="text" id="titoloInserito" required="required" name="titolo" placeholder="titolo"><br>
+                <input type="submit" name="azione" value="canellazione canzone">
+            </form>
+        </div>
+
+    </body>
     
 </html>
 

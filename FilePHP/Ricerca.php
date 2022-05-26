@@ -3,64 +3,136 @@
 
     function ricerca($titoloInserito)
     {
-        $queryRicerca="SELECT b.*
-                       FROM brani b
-                       WHERE b.titolo='".$titoloInserito."'";
+		$tipoProfilo=$_SESSION['tipoProfilo'];
 
-		
-        $risultato=$GLOBALS['connection']->query($queryRicerca);
-
-		echo 	("<!DOCTYPE html>
-						<html lang='it'>
-				
-							<head>
-					
-								<meta charset='UTF-8'>
-								<title>Voice Hunter</title>
-						
-								<link rel='stylesheet' href='../CSS/General_theme.css'>
-							</head>
-					
-						
-							<div class='navbar'>
-								<a href='../HTML/index.html'>
-									<img src='../Img/home.png'/>
-								</a>
-								<a href='../HTML/profilo.html'>
-									<img src='../Img/user.png'/>
-								</a>
-							</div>
-							
-							<div id='pagina'>");
-
-        if($risultato->num_rows>0)
+		if($tipoProfilo=="utenti")
 		{
-			//$ricerche=array();
+			$queryRicerca="SELECT b.*
+						FROM brani b
+						WHERE b.titolo='".$titoloInserito."'";
 
-			while($row=$risultato->fetch_assoc())
+			
+			$risultato=$GLOBALS['connection']->query($queryRicerca);
+
+			echo 	("<!DOCTYPE html>
+							<html lang='it'>
+					
+								<head>
+						
+									<meta charset='UTF-8'>
+									<title>Voice Hunter</title>
+							
+									<link rel='stylesheet' href='../CSS/General_theme.css'>
+								</head>
+						
+							
+								<div class='navbar'>
+									<a href='../HTML/profilo_utente.html'>  <!--home-->
+										<img src='../Img/home.png'>
+									</a>
+									<form method='post' action='../FilePHP/Controller.php'>
+										<input type='submit' name='azione' value='account' id='btnAccount'>
+									</form>
+									<form method='post' action='../FilePHP/Controller.php'>
+										<input type='submit' name='azione' value='logout' id='btnlogout'>
+									</form>
+								</div>
+								
+								<div id='pagina'>");
+
+			if($risultato->num_rows>0)
 			{
-				$canzone=$row['canzone'];
-				$genere=$row['genere'];
-				$titolo=$row['titolo'];
+				//$ricerche=array();
 
-				
-							
-				echo ("<p><b>".$titolo."</b> appartenente a ".$genere."</p>
-					   <a href='".$canzone."'>".$titolo."</a><hr>");
-							
-							
+				while($row=$risultato->fetch_assoc())
+				{
+					$canzone=$row['canzone'];
+					$genere=$row['genere'];
+					$titolo=$row['titolo'];
 
-				//array_push($ricerche, $row);
+					
+								
+					echo ("<p><b>".$titolo."</b> appartenente a ".$genere."</p>
+						<a href='".$canzone."'>".$titolo."</a><hr>");
+								
+								
+
+					//array_push($ricerche, $row);
+				}
+
+				/*$json_pretty=json_encode($ricerche);
+				echo "<pre>".$json_pretty."<pre/>";*/
+			}else
+			{
+				echo ("<p>Nessun risultato trovato</p>");
 			}
 
-			/*$json_pretty=json_encode($ricerche);
-            echo "<pre>".$json_pretty."<pre/>";*/
-		}else
+			echo ("</div>
+				</html>");
+		}else if($tipoProfilo=="autori")
 		{
-			echo ("<p>Nessun risultato trovato</p>");
-		}
+			$queryRicerca="SELECT b.*
+						FROM brani b
+						WHERE b.titolo='".$titoloInserito."'";
 
-		echo ("</div>
-			</html>");
+			
+			$risultato=$GLOBALS['connection']->query($queryRicerca);
+
+			echo 	("<!DOCTYPE html>
+							<html lang='it'>
+					
+								<head>
+						
+									<meta charset='UTF-8'>
+									<title>Voice Hunter</title>
+							
+									<link rel='stylesheet' href='../CSS/General_theme.css'>
+								</head>
+						
+							
+								<div class='navbar'>
+									<a href='../HTML/profilo_autore.html'>  <!--home-->
+										<img src='../Img/home.png'>
+									</a>
+									<form method='post' action='../FilePHP/Controller.php'>
+										<input type='submit' name='azione' value='account' id='btnAccount'>
+									</form>
+									<form method='post' action='../FilePHP/Controller.php'>
+										<input type='submit' name='azione' value='logout' id='btnlogout'>
+									</form>
+								</div>
+								
+								<div id='pagina'>");
+
+			if($risultato->num_rows>0)
+			{
+				//$ricerche=array();
+
+				while($row=$risultato->fetch_assoc())
+				{
+					$canzone=$row['canzone'];
+					$genere=$row['genere'];
+					$titolo=$row['titolo'];
+
+					
+								
+					echo ("<p><b>".$titolo."</b> appartenente a ".$genere."</p>
+						<a href='".$canzone."'>".$titolo."</a><hr>");
+								
+								
+
+					//array_push($ricerche, $row);
+				}
+
+				/*$json_pretty=json_encode($ricerche);
+				echo "<pre>".$json_pretty."<pre/>";*/
+			}else
+			{
+				echo ("<p>Nessun risultato trovato</p>");
+			}
+
+			echo ("</div>
+				</html>");
+		}
     }
 ?>

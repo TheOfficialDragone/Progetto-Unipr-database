@@ -35,7 +35,6 @@
 			exit;
 		}else
 		{
-			echo("<script type='text/javascript'>alert('Account ".$utenteInserito['username']." registrato con successo');</script");
 			header("refresh:0.1; url=../HTML/login.html");
 		}
 	}
@@ -57,7 +56,6 @@
 			exit;
 		}else
 		{
-			echo("<script type='text/javascript'>alert('Account ".$autoreInserito['nomedarte']." registrato con successo');</script");
 			header("refresh:0.1; url=../HTML/login.html");
 		}
 	}

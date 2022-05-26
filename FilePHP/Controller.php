@@ -1,8 +1,6 @@
 <?php
-    include "Account.php";
     include "Cancellazione.php";
     include "DataBase_Connection.php";
-    include "HomePage.php";
     include "Inserimento.php";
     include "Login.php";
     include "Logout.php";
@@ -31,25 +29,22 @@
         case "tipo_profilo":
             getTipoAccount();
             break;
-        case "home_page":
-            HomePage();
-            break;
         case "account":
-            getAccount();
+            visualizzaProfilo();
             break;
-        case "inserimentoCanzone":
+        case "inserisci canzone":
             inserimentoCanzone($_POST['canzone'], $_POST['genere'], $_POST['titolo']);
             break;
-        case "inserisci_album":
-            inserimentoAlbum($_REQUEST['titolo'], $_REQUEST['nbrani']);
+        case "inserisci album":
+            inserimentoAlbum($_POST['titolo'], $_POST['tipologia']);
             break;
-        case "canellazione_canzone":
-            cancellazioneCanzone($_REQUEST['genere'], $_REQUEST['titolo']);
+        case "canellazione canzone":
+            cancellazioneCanzone($_POST['genere'], $_POST['titolo']);
             break;
         case "ricerca":
             ricerca($_POST['brano']);
             break;
         default: 
-            echo("ERRORE saa");
+            echo("ERRORE");
     }
 ?>
