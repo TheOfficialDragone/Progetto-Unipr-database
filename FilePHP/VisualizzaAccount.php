@@ -75,7 +75,7 @@ function visualizzaProfilo()
 
 			}else if($tipoProfilo=="autori")
 			{
-				$queryInfoAutore = "SELECT a.nomedarte, a.genere, a.nalbum, a.email
+				$queryInfoAutore = "SELECT a.nomedarte, a.genere, a.email
                              FROM autori a
                              WHERE a.nomedarte = '".$_SESSION['nomedarte']."' AND a.email = '".$_SESSION['email']."'";
         		
@@ -124,13 +124,11 @@ function visualizzaProfilo()
 					{
 						$nomedarte=$row['nomedarte'];
 						$genere=$row['genere'];
-						$nalbum=$row['nalbum'];
 						$email=$row['email'];
 
 						echo (	'<h3><b>Dati utente</b></h3>
 								<p><b>Nome artista:</b> '.$nomedarte.'</p>
 								<p><b>Genere:</b> '.$genere.'</p>
-								<p><b>Numero album:</b> '.$nalbum.'</p>
 								<p><b>Email:</b> '.$email.'</p>');
 					}
 

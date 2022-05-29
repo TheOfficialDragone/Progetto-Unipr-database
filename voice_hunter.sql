@@ -1,0 +1,56 @@
+CREATE TABLE autori(
+    nomedarte VARCHAR(50) PRIMARY KEY NOT NULL,
+    genere VARCHAR(15) NOT NULL,
+    password VARCHAR(40) NOT NULL,
+    email VARCHAR(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE utenti(
+    username VARCHAR(50) PRIMARY KEY NOT NULL,
+    nome VARCHAR(10) NOT NULL,
+    cognome VARCHAR(10) NOT NULL,
+    password VARCHAR(40) NOT NULL,
+    email VARCHAR(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE album(
+    ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    titolo VARCHAR(20) NOT NULL,
+    Autore VARCHAR(50) NOT NULL,
+    FOREIGN KEY(Autore) REFERENCES autori(nomedarte)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+
+CREATE TABLE brani(
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    canzone VARCHAR(100) NOT NULL,
+    genere VARCHAR(15) NOT NULL,
+    titolo VARCHAR(30) NOT NULL,
+    CODAlbum INT,
+    Autore VARCHAR(50),
+    FOREIGN KEY(CODAlbum) REFERENCES album(ID),
+    FOREIGN KEY(Autore) REFERENCES autori(nomedarte)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+
+CREATE TABLE utentibrani(
+    ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Utente VARCHAR(50),
+    CODBrano INT,
+    FOREIGN KEY(Utente) REFERENCES utenti(username),
+    FOREIGN KEY(CODBrano) REFERENCES brani(ID)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+
+CREATE TABLE utentiautori(
+    ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Utente VARCHAR(50),
+    Autore VARCHAR(50),
+    FOREIGN KEY(Utente) REFERENCES utenti(username),
+    FOREIGN KEY(Autore) REFERENCES autori(nomedarte)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);

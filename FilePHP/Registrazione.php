@@ -42,9 +42,9 @@
 	//REGISTRAZIONE DI UN AUTORE NEL DATABASE
 	function registrazioneAutore($emailInserita, $passwordInserita)
 	{
-		$autoreInserito=array('nomedarte'=>strtolower($_POST['nomedarte']), 'genere'=>$_POST['genere'], 'nalbum'=>$_POST['nalbum'], 'password'=>$passwordInserita, 'email'=>$emailInserita);
+		$autoreInserito=array('nomedarte'=>strtolower($_POST['nomedarte']), 'genere'=>$_POST['genere'], 'password'=>$passwordInserita, 'email'=>$emailInserita);
 		
-		$queryInserisciAutore=$GLOBALS['connection']->prepare("INSERT INTO autori VALUES('".$autoreInserito['nomedarte']."', '".$autoreInserito['genere']."', '".$autoreInserito['nalbum']."', ?, '".$autoreInserito['email']."')");
+		$queryInserisciAutore=$GLOBALS['connection']->prepare("INSERT INTO autori VALUES('".$autoreInserito['nomedarte']."', '".$autoreInserito['genere']."', ?, '".$autoreInserito['email']."')");
 		
 		$password=mysqli_real_escape_string($GLOBALS['connection'], $autoreInserito['password']);
 		

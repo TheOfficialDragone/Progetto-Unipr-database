@@ -1,6 +1,5 @@
 <?php
     include "Cancellazione.php";
-    include "DataBase_Connection.php";
     include "Inserimento.php";
     include "Login.php";
     include "Logout.php";
@@ -25,9 +24,6 @@
             break;
         case "registrazione":
             registrazione($_REQUEST['tipoRegistrazione'], strtolower($_POST['email']), hash("md5", $_POST["password"]));
-            break;
-        case "tipo_profilo":
-            getTipoAccount();
             break;
         case "account":
             visualizzaProfilo();
