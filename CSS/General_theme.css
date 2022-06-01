@@ -151,11 +151,11 @@ input[list]{
 
 #btnAccount{
     height: 85%;
-    width: 7%; 
+    width: 10%; 
     position: absolute; 
     left: 5%;
     background-color: rgb(246, 6, 6);
-    border-radius: 10px; /* Bordi smussati */  
+    border-radius: 10px; /* Bordi smussati */   
 }
 
 .navbar a:hover{

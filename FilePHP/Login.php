@@ -54,7 +54,7 @@
         }else if (controlloLogin($emailControllo, $passwdControllo, "autori")>0)
         {
             $_SESSION['tipoProfilo'] = "autori";
-            header("refresh:0.1; url=../HTML/profilo_autore.html");
+            header("refresh:0.1; url=../HTML/profilo_autore.php");
         }else
 		{
 			header("refresh:0.1; url=../HTML/index.html");

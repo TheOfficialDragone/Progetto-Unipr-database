@@ -13,7 +13,7 @@
     <body>
         
         <div class="navbar">
-            <a href="../HTML/profilo_autore.html">  <!--home-->
+            <a href="../HTML/profilo_autore.php">  <!--home-->
                 <img src="../Img/home.png">
             </a>
 
@@ -51,7 +51,7 @@
             <form method="post" action="../FilePHP/Controller.php">
                 <label for="Cerca_canzone">Cerca una canzone:</label><br>
                 <input type="text" id="ricerca" name="brano" value="" placeholder="cerca una canzone"><br>
-                <input type="submit" name="azione" value="ricerca" id="Cerca_brano">
+                <input type="submit" name="azione" value="ricerca brano" id="Cerca_brano">
             </form>
     
         </div>
@@ -62,7 +62,34 @@
                 <label>Inserimento di una canzone</label><br>
                 <input type="text" id="canzoneInserita" required="required" name="canzone" placeholder="link canzone"><br>
                 <input type="text" id="genereInserito"  required="required" name="genere" placeholder="genere"><br>
-                <input type="text" id="titoloInserito" required="required" name="titolo" placeholder="titolo"><br>
+                <input type="text" id="titoloInserito" required="required" name="titolo" placeholder="titolo"><br><br>
+                <select id="CODAlbum" name="CODAlbum" onchange="show()">
+                <?php
+	                $connection=new mysqli("localhost", "root", "", "voice_hunter");
+
+                    session_start();
+
+                    $queryAlbum="SELECT a.titolo, a.ID
+                                 FROM album a, autori au
+                                 WHERE au.nomedarte=a.Autore
+                                 AND au.nomedarte='".$_SESSION['nomedarte']."'";
+
+                    $risultato=$GLOBALS['connection']->query($queryAlbum);
+
+                    if($risultato->num_rows>0)
+			        {
+				        while($row=$risultato->fetch_assoc())
+				        {
+                            $titolo=$row['titolo'];
+                            $id=$row['ID'];
+
+                            echo ('<option value="'.$id.'">'.$titolo.'</option>');
+
+                        }
+                    }
+
+                ?>
+                </select><br>
                 <input type="submit" name="azione" value="inserisci canzone">
             </form>
         </div>

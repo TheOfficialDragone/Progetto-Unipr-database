@@ -6,6 +6,8 @@
     include "Registrazione.php";
     include "VisualizzaAccount.php";
     include "Ricerca.php";
+    include "Segui.php";
+    include "Like.php";
 
     if(!isset($_SESSION['email']))
     {
@@ -29,7 +31,7 @@
             visualizzaProfilo();
             break;
         case "inserisci canzone":
-            inserimentoCanzone($_POST['canzone'], $_POST['genere'], $_POST['titolo']);
+            inserimentoCanzone($_POST['canzone'], $_POST['genere'], $_POST['titolo'], $_POST['CODAlbum']);
             break;
         case "inserisci album":
             inserimentoAlbum($_POST['titolo'], $_POST['tipologia']);
@@ -37,9 +39,16 @@
         case "canellazione canzone":
             cancellazioneCanzone($_POST['genere'], $_POST['titolo']);
             break;
-        case "ricerca":
-            ricerca($_POST['brano']);
+        case "ricerca brano":
+            ricercaBrano($_POST['brano']);
             break;
+        case "ricerca autore":
+            ricercaAutore($_POST['autore']);
+            break;
+        case "segui":
+            segui();
+        case "like":
+            like();
         default: 
             echo("ERRORE");
     }

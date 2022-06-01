@@ -97,7 +97,7 @@ function visualizzaProfilo()
 					
 					<div class="navbar">
 				
-						<a href="../HTML/profilo_autore.html">  <!--home-->
+						<a href="../HTML/profilo_autore.php">  <!--home-->
 							<img src="../Img/home.png">
 						</a>
 

@@ -8,7 +8,7 @@
 							   
 		if($GLOBALS['connection']->query($queryCancellazioneCanzone))
 		{
-			header("refresh:0.1; url=../HTML/profilo_autore.html");
+			header("refresh:0.1; url=../HTML/profilo_autore.php");
 		}else
 		{
 			echo("ERRORE");
